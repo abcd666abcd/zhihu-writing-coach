@@ -1,4 +1,4 @@
-# 瓦猫写作私教（zhihu-wacat-writing-coach）
+# 瓦猫写作私教（zhihu-writing-coach）
 
 一个网文写作教练 Skill。用大白话教人物塑造、反派设计、开篇节奏和写作底层逻辑，适合新人作者入门，也适合迷茫期作者回炉。
 
@@ -29,14 +29,19 @@
 把整个目录拷到 skills 目录下：
 
 ```bash
-cp -r zhihu-wacat-writing-coach ~/.workbuddy/skills/
+cp -r zhihu-writing-coach ~/.workbuddy/skills/
 ```
 
-Windows 用目录联接也可以（改一处两边生效）：
+Windows 也可以用目录联接，指向本仓库的克隆位置（改一处两边生效）。
+在 **PowerShell** 里执行，把 `<本仓库路径>` 换成实际路径：
 
-```bash
-cmd /c mklink /J "%USERPROFILE%\.workbuddy\skills\zhihu-wacat-writing-coach" "D:\开源项目\zhihu-wacat-writing-coach"
+```powershell
+New-Item -ItemType Junction `
+  -Path "$env:USERPROFILE\.workbuddy\skills\zhihu-writing-coach" `
+  -Target "<本仓库路径>"
 ```
+
+> 注意：目录名要和 `SKILL.md` 里的 `name` 字段保持一致（都是 `zhihu-writing-coach`），否则部分 Agent 会识别不到。
 
 ### 其他支持 Skill 的 Agent
 
@@ -45,7 +50,7 @@ cmd /c mklink /J "%USERPROFILE%\.workbuddy\skills\zhihu-wacat-writing-coach" "D:
 ## 目录结构
 
 ```
-zhihu-wacat-writing-coach/
+zhihu-writing-coach/
 ├── SKILL.md                      # 技能定义：身份、知识调用规则、教学方法、输出风格
 ├── references/                   # 知识库，提问时按需读取
 │   ├── characters.md             # 人物塑造
