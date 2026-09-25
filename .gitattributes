@@ -1,0 +1,13 @@
+# 统一行尾符为 LF，避免跨平台克隆时整份文件显示为已修改
+* text=auto eol=lf
+
+# 明确指定文本文件类型
+*.md   text eol=lf
+*.txt  text eol=lf
+
+# 二进制文件不做行尾符转换
+*.png  binary
+*.jpg  binary
+*.jpeg binary
+*.gif  binary
+*.zip  binary
